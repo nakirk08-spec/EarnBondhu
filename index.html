@@ -1,1 +1,66 @@
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarnBondhu</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f0f7ff;margin:0;color:#17324d}
+header{background:#0878d1;color:white;text-align:center;padding:24px}
+main{padding:18px;max-width:600px;margin:auto}
+.card{background:white;padding:18px;margin:14px 0;border-radius:12px;box-shadow:0 2px 8px #ccd8e5}
+button{background:#0878d1;color:white;border:0;border-radius:8px;padding:12px;font-size:16px}
+</style>
+</head>
+<body>
+<header>
+<h1>EarnBondhu</h1>
+<p>কাজ শিখুন, দক্ষতা বাড়ান</p>
+</header>
+<main>
+<div class="card">
+<h2>স্বাগতম!</h2>
+<p>EarnBondhu-এর বিনামূল্যের ডেমো ওয়েবসাইটে আপনাকে স্বাগতম।</p>
+</div>
+<div class="card">
+<h3>🧮 হিসাবের কাজ</h3>
+<p>প্রশ্ন: ১২ + ৮ = কত?</p>
+<input id="ans" type="number" placeholder="উত্তর লিখুন">
+<button onclick="check()">উত্তর জমা দিন</button>
+<p id="result"></p>
+</div>
+<div class="card">
+<h3>⌨️ টাইপিং অনুশীলন</h3>
+<p>আমি নতুন কিছু শিখছি।</p>
+<input id="typing" placeholder="বাক্যটি লিখুন">
+<button onclick="typecheck()">যাচাই করুন</button>
+<p id="typed"></p>
+</div>
+<div class="card">
+<h3>⭐ আমার পয়েন্ট</h3>
+<p id="points">০ পয়েন্ট</p>
+<p>এটি শুধু পরীক্ষামূলক ডেমো। এখানে বাস্তব টাকা আয় বা উত্তোলন হয় না।</p>
+</div>
+</main>
+<script>
+let points=0;
+function check(){
+if(document.getElementById('ans').value==='20'){
+points+=5;
+document.getElementById('result').textContent='সঠিক উত্তর! ৫ পয়েন্ট পেয়েছেন।';
+document.getElementById('points').textContent=points+' পয়েন্ট';
+}else{
+document.getElementById('result').textContent='আবার চেষ্টা করুন।';
+}}
+function typecheck(){
+if(document.getElementById('typing').value.trim()==='আমি নতুন কিছু শিখছি।'){
+points+=5;
+document.getElementById('typed').textContent='সঠিক! ৫ পয়েন্ট পেয়েছেন।';
+document.getElementById('points').textContent=points+' পয়েন্ট';
+}else{
+document.getElementById('typed').textContent='বাক্যটি ঠিকভাবে লিখে আবার চেষ্টা করুন।';
+}}
+</script>
+</body>
+</html>
